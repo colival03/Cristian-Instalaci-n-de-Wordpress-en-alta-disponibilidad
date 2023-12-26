@@ -30,4 +30,7 @@ Configuración del servidor NFS y el motor PHP
 
 ![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/16d969c0-c59f-4538-92f1-0aee4b2d6437)
 
+Descarga del wordpress
+
+![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/a1ab4cfd-cb4d-42a6-853a-5b0b5e879e48)
 
