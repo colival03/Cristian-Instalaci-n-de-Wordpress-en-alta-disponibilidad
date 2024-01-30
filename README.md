@@ -1,13 +1,20 @@
 # Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad
 
-##Índice
+## Índice
 
+1. [Introducción](#Introducción)
+2. [Configuración del balanceador web](#configuración-del-balanceador-web)
+3. [Configuración del servidor web 1](#configuración-del-servidor-web-1)
+4. [Configuración del servidor web 2](#configuración-del-servidor-web-2)
+5. [Configuración del servidor NFS y el motor PHP](#configuración-del-servidor-NFS-y-el-motor-PHP)
+6. [Configuración del servidor de datos](#configuración-del-servidor-de-datos)
+7. [Conclusión](#conclusión)
 
-Introducción
+# Introducción
 
 En esta práctica implementaremos una intalación de wordpress en un estructura de cuatro capas, ya que esta estructura es más robusta y en la que se encuentran el la primera capa un balanceador de carga, en la segunda dos servidores backend  y un servidor nfs, en la tercera capa encontraremos un balanceador sql y en la cuarta y última capa encontraremos nuestros dos servidores de base de datos.
 
-Configuración del balanceador web
+# Configuración del balanceador web
 
 Para comenzar con nuestra configuración de nuestro balanceador web, tendremos que crear el fichero "load_balancer.conf" y posteriormente editarlo, dentro de este fichero tendremos que añadir la ip de los dos servidores que están como ya hemos explicado antes en la capa 2.
 
@@ -16,12 +23,11 @@ Para comenzar con nuestra configuración de nuestro balanceador web, tendremos q
 Una vez hecho lo anterior podemos borrar en "/etc/nginx/sites-enabled" el fichero "default".
 ![borrar default en sites-enabled](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/13120c51-e637-4dd7-8b40-94640175bd07)
 
-Configuración del servidor web 1
+# Configuración del servidor web 1
 
 Ahora vamos y una vez hayamos realizado el balanceador de carga pasaremos a configurar el servidor web 1. Para ello, empezaremos copiando el fichero "default" y en mi caso le he puesto "serverweb1", después he creado un enlace desde la ruta en la que se encuentra hasta "/etc/nginx/sites-enabled".
 
 ![Copiar default y enlace simbolico serverweb1](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/a851c13c-d46a-4b0f-964a-d2d454dbfb3f)
-
 
 Una vez hecho esto, tendremos que editar el fichero en la línea "fastcgi_pass" hay que poner la ip del servidor nfs:9000;
 
@@ -31,7 +37,7 @@ Y debajo del DocumentRoot, hay que añadir index.php justo detrás de index.
 
 ![editar el fichero de sites-enable2](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/2ca2ac0f-965a-4cee-9c45-5c7527e0d250)
 
-Configuración del servidor web 2
+# Configuración del servidor web 2
 
 Para nuestro servidor web 2, tendremos que realizar los mismos pasos que el servidor anterior.
 
@@ -41,7 +47,7 @@ Para nuestro servidor web 2, tendremos que realizar los mismos pasos que el serv
 
 ![editar fichero sites-enable en serverweb2](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/8a4b690c-f441-4ee7-a944-8fb0424277ef)
 
-Configuración del servidor NFS y el motor PHP
+# Configuración del servidor NFS y el motor PHP
 
 Para nuestro servidor NFS necesitamos editar el fichero "www.conf" que se encuentra en la siguiente ruta "/etc/php/7.3/pool.d/www.conf" y añadimos la siguiente línea.
 
@@ -57,7 +63,7 @@ Ahora tendremos que descargar wordpress en los servidores web 1 y 2. En el servi
 
 ![Descomprimir archivo en serverweb1](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/2bd34fec-d3fd-4d4d-8a5d-bed04d4ad982)
 
-Configuración del servidor de datos
+# Configuración del servidor de datos
 
 El siguiente paso para nuestra configuración será realizar la configuración de nuestros servidores de base de datos, para los cuales realizaremos los siguientes pasos.
 
@@ -74,3 +80,7 @@ Por último, tendremos que irnos a nuestros servers web y editar el fichero wp-c
 ![cambiamos el nombre al fichero](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/342058de-ce87-4cb8-a2d2-08445cf7905d)
 
 ![editar fichero wp-config](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/143cdfb9-6ffc-4a90-a88f-c21978369979)
+
+# Conclusión
+
+Para esta práctica se ha implementado la estructura de capa 4 para que haya una mejor disponibilidad a la hora de algún posible fallo, por ejemplo si se cayese un servidor web o un servidor de datos y no se pierdan la productividad, ya que siempre habrá uno levantado por el que pasará el tráfico.
