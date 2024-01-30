@@ -59,3 +59,18 @@ Ahora tendremos que descargar wordpress en los servidores web 1 y 2. En el servi
 
 Configuración del servidor de datos
 
+El siguiente paso para nuestra configuración será realizar la configuración de nuestros servidores de base de datos, para los cuales realizaremos los siguientes pasos.
+
+En primer lugar, tendremos que crear la base de datos, un usuario y darle permisos para que pueda acceder a ella.
+
+![Crear base de datos y crear usuario](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/bdd5753c-0d5b-4ae6-94f1-cb1a5ddf29ed)
+
+Después, tendremos que editar el DocumentRoot.
+
+![editar el document root](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/d924f5c1-1dcd-4717-9216-c060cd7bbc46)
+
+Por último, tendremos que irnos a nuestros servers web y editar el fichero wp-config.php
+
+![cambiamos el nombre al fichero](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/342058de-ce87-4cb8-a2d2-08445cf7905d)
+
+![editar fichero wp-config](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/143cdfb9-6ffc-4a90-a88f-c21978369979)
