@@ -43,9 +43,19 @@ Para nuestro servidor web 2, tendremos que realizar los mismos pasos que el serv
 
 Configuración del servidor NFS y el motor PHP
 
+Para nuestro servidor NFS necesitamos editar el fichero "www.conf" que se encuentra en la siguiente ruta "/etc/php/7.3/pool.d/www.conf" y añadimos la siguiente línea.
 
+![Modificar listen ](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/7c94eca8-6b07-4175-a0e1-3dd8c57398f7)
 
-Descarga del wordpress
+Reiniciamos el servicio.
 
-![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/a1ab4cfd-cb4d-42a6-853a-5b0b5e879e48)
+![reiniciar el servicio](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/d1c253c8-0e49-45e6-9b21-6fda286b0ed7)
+
+Ahora tendremos que descargar wordpress en los servidores web 1 y 2. En el servidor NFS también lo descargamos y creamos el directorio "/var/www/html"
+
+![Descargar wordpress en servidorweb1](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/f46e9d22-9753-4639-8315-bc784b8973c6)
+
+![Descomprimir archivo en serverweb1](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/2bd34fec-d3fd-4d4d-8a5d-bed04d4ad982)
+
+Configuración del servidor de datos
 
