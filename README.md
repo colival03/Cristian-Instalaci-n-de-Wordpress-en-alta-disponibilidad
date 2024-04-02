@@ -20,8 +20,10 @@ Para comenzar con nuestra configuración de nuestro balanceador web, tendremos q
 
 ![editar fichero load_balancer conf](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/0698b8c6-e3bf-4d70-8322-b12d3124db46)
 
+![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/01cee1b6-4949-4fa5-bf5c-28023d91ce0f)
+
 Una vez hecho lo anterior podemos borrar en "/etc/nginx/sites-enabled" el fichero "default".
-![borrar default en sites-enabled](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/13120c51-e637-4dd7-8b40-94640175bd07)
+![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/7230f39d-f0b5-483b-832a-a9c6483300b4)
 
 # Configuración del servidor web 1
 
@@ -62,6 +64,10 @@ Ahora tendremos que descargar wordpress en los servidores web 1 y 2. En el servi
 ![Descargar wordpress en servidorweb1](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/f46e9d22-9753-4639-8315-bc784b8973c6)
 
 ![Descomprimir archivo en serverweb1](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/2bd34fec-d3fd-4d4d-8a5d-bed04d4ad982)
+
+Cambiamos el propietario y el grupo de la carpeta "wordpress" a "nobody nogroup".
+
+![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/82664b74-a401-4d8e-944e-7ea41b5a1256)
 
 # Configuración del servidor de datos
 
