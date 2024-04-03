@@ -69,6 +69,14 @@ Cambiamos el propietario y el grupo de la carpeta "wordpress" a "nobody nogroup"
 
 ![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/82664b74-a401-4d8e-944e-7ea41b5a1256)
 
+Luego nos tendremos que ir al servidor nfs e introducir la siguiente linea.
+
+![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/b9d5877a-0ad7-4ff2-8c3a-cb1029b95f93)
+
+Comprobamos que está el servicio correctamente activo.
+
+![image](https://github.com/colival03/Cristian-Instalaci-n-de-Wordpress-en-alta-disponibilidad/assets/146434716/48396f46-4a4d-41d1-b4ae-0e4078080600)
+
 # Configuración del servidor de datos
 
 El siguiente paso para nuestra configuración será realizar la configuración de nuestros servidores de base de datos, para los cuales realizaremos los siguientes pasos.
